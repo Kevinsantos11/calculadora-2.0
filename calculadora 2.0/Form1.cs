@@ -23,7 +23,7 @@ namespace calculadora_2._0
             resultado = numTemp;
             numTemp = 0;
             operacao = operador;
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -39,7 +39,6 @@ namespace calculadora_2._0
         private void btn_subtracao_Click(object sender, EventArgs e)
         {
             digitaOperacao("-");
-            resultado = numTemp - resultado;
         }
 
         private void btn_2_Click(object sender, EventArgs e)
@@ -80,14 +79,14 @@ namespace calculadora_2._0
         private void btn_0_Click(object sender, EventArgs e)
         {
             DigitaNumero(0);
-            
+
         }
 
         private void btn_igual_Click(object sender, EventArgs e)
         {
-            
 
-            if(operacao == "+")
+
+            if (operacao == "+")
             {
                 resultado = resultado + numTemp;
                 textBox1.Text = resultado.ToString();
@@ -113,7 +112,6 @@ namespace calculadora_2._0
         private void btn_soma_Click(object sender, EventArgs e)
         {
             digitaOperacao("+");
-            resultado = numTemp + resultado;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
