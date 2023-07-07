@@ -3,7 +3,7 @@ namespace calculadora_2._0
     public partial class Form1 : Form
     {
         public int resultado, numTemp;
-        public string operacao;
+        public string operacao = "";
 
 
 
@@ -20,9 +20,45 @@ namespace calculadora_2._0
 
         private void digitaOperacao(string operador)
         {
-            resultado = numTemp;
+            if(operacao.Length > 0)
+            {
+                calculaResultado();
+            }
+            else
+            {
+                resultado = numTemp;
+            }
+
+           
             numTemp = 0;
             operacao = operador;
+
+        }
+
+        private void calculaResultado()
+        {
+
+            if (operacao == "+")
+            {
+                resultado = resultado + numTemp;
+
+            }
+            else if (operacao == "-")
+            {
+                resultado = resultado - numTemp;
+
+            }
+            else if (operacao == "*")
+            {
+                resultado = resultado * numTemp;
+
+            }
+            else if (operacao == "/")
+            {
+                resultado = resultado / numTemp;
+
+            }
+            textBox1.Text = resultado.ToString();
 
         }
 
@@ -85,29 +121,12 @@ namespace calculadora_2._0
         private void btn_igual_Click(object sender, EventArgs e)
         {
 
+            calculaResultado();
+            resultado = 0;
+            numTemp = 0;
+            operacao = "";
 
-            if (operacao == "+")
-            {
-                resultado = resultado + numTemp;
-                textBox1.Text = resultado.ToString();
-            }
-            else if (operacao == "-")
-            {
-                resultado = resultado - numTemp;
-                textBox1.Text = resultado.ToString();
-            }
-            else if (operacao == "*")
-            {
-                resultado = resultado * numTemp;
-                textBox1.Text = resultado.ToString();
-            }
-            else if (operacao == "/")
-            {
-                resultado = resultado / numTemp;
-                textBox1.Text = resultado.ToString();
-            }
         }
-
 
         private void btn_soma_Click(object sender, EventArgs e)
         {
@@ -127,6 +146,14 @@ namespace calculadora_2._0
         private void btn_divisao_Click(object sender, EventArgs e)
         {
             digitaOperacao("/");
+        }
+
+        private void btn_c_Click(object sender, EventArgs e)
+        {
+            
+            resultado = 0;
+            numTemp = 0;
+            operacao = "";
         }
     }
 }

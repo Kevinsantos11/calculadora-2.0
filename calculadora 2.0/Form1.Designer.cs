@@ -44,6 +44,7 @@
             btn_subtracao = new Button();
             btn_multiplicacao = new Button();
             btn_divisao = new Button();
+            btn_c = new Button();
             SuspendLayout();
             // 
             // btn_1
@@ -168,9 +169,9 @@
             // btn_igual
             // 
             btn_igual.BackColor = Color.FromArgb(0, 192, 192);
-            btn_igual.Location = new Point(374, 307);
+            btn_igual.Location = new Point(399, 307);
             btn_igual.Name = "btn_igual";
-            btn_igual.Size = new Size(154, 33);
+            btn_igual.Size = new Size(131, 33);
             btn_igual.TabIndex = 11;
             btn_igual.Text = "=";
             btn_igual.UseVisualStyleBackColor = false;
@@ -220,12 +221,23 @@
             btn_divisao.UseVisualStyleBackColor = false;
             btn_divisao.Click += btn_divisao_Click;
             // 
+            // btn_c
+            // 
+            btn_c.Location = new Point(630, 122);
+            btn_c.Name = "btn_c";
+            btn_c.Size = new Size(40, 33);
+            btn_c.TabIndex = 16;
+            btn_c.Text = "C";
+            btn_c.UseVisualStyleBackColor = true;
+            btn_c.Click += btn_c_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(255, 128, 128);
+            BackColor = Color.FromArgb(0, 64, 64);
             ClientSize = new Size(1399, 518);
+            Controls.Add(btn_c);
             Controls.Add(btn_divisao);
             Controls.Add(btn_multiplicacao);
             Controls.Add(btn_subtracao);
@@ -266,5 +278,6 @@
         private Button btn_subtracao;
         private Button btn_multiplicacao;
         private Button btn_divisao;
+        private Button btn_c;
     }
 }
